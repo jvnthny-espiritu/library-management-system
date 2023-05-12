@@ -52,16 +52,16 @@ public class Login extends javax.swing.JFrame {
         passwordTxt.setFont(new java.awt.Font("Tw Cen MT", 0, 20)); // NOI18N
         passwordTxt.setForeground(new java.awt.Color(124, 137, 139));
         passwordTxt.setText("Password");
-        jPanel2.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        jPanel2.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         userTxt.setBackground(new java.awt.Color(124, 137, 139));
         userTxt.setFont(new java.awt.Font("Tw Cen MT", 0, 20)); // NOI18N
         userTxt.setForeground(new java.awt.Color(124, 137, 139));
         userTxt.setText("Username");
-        jPanel2.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+        jPanel2.add(userTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         userIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/userIcon.png"))); // NOI18N
-        jPanel2.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 130, -1, -1));
+        jPanel2.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 140, -1, -1));
 
         userTxtFld.setBackground(new java.awt.Color(37, 52, 57));
         userTxtFld.setColumns(2);
@@ -78,17 +78,17 @@ public class Login extends javax.swing.JFrame {
                 userTxtFldActionPerformed(evt);
             }
         });
-        jPanel2.add(userTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 190, 25));
+        jPanel2.add(userTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 190, 25));
 
         passIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/passIcon.png"))); // NOI18N
-        jPanel2.add(passIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 220, -1, -1));
+        jPanel2.add(passIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 230, -1, -1));
 
         jPasswordField1.setBackground(new java.awt.Color(37, 52, 57));
         jPasswordField1.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(124, 137, 139));
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(124, 137, 139)));
         jPasswordField1.setMargin(new java.awt.Insets(0, 1, 1, 0));
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 190, 25));
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 190, 25));
 
         loginButton.setBackground(new java.awt.Color(124, 137, 139));
         loginButton.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
@@ -101,7 +101,7 @@ public class Login extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 300, 80, 30));
+        jPanel2.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 310, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 310, 500));
 
