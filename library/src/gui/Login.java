@@ -3,6 +3,7 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+
 public class Login extends JFrame {
     public Login() {
         initialize();
@@ -59,7 +60,33 @@ public class Login extends JFrame {
         right.add(userfld);
         userfld.setBounds(110, 175, 120, 20);
 
-        
+        passicon =new JLabel();
+        passicon.setIcon(new ImageIcon(getClass().getResource("/resource/passicon.png")));
+        right.add(passicon);
+        passicon.setBounds(50, 230, 50, 50);
+
+        passtxt = new JLabel();
+        passtxt.setText("Password:");
+        passtxt.setFont(new Font("Tw Cen MT", 0, 18));
+        passtxt.setForeground(c1);
+        right.add(passtxt);
+        passtxt.setBounds(110, 230, 100, 20);
+
+        passfld = new JPasswordField();
+        passfld.setBackground(c2);
+        passfld.setForeground(c1);
+        passfld.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, c1));
+        right.add(passfld);
+        passfld.setBounds(110, 255, 120, 20);
+
+        loginbtn = new JButton("LOGIN");
+        loginbtn.setFont(new Font("Tw Cen MT", 0, 14));
+        loginbtn.setBackground(c1);
+        loginbtn.setForeground(c2);
+        loginbtn.setBorderPainted(false);
+        loginbtn.setFocusPainted(false);
+        right.add(loginbtn);
+        loginbtn.setBounds(110, 320, 80, 18);
 
         pack();
     }
