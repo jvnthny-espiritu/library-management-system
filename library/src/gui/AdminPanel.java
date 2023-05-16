@@ -71,6 +71,50 @@ public class AdminPanel extends JFrame {
             }
         });
 
+         issues = new JButton();
+        issues.setBackground(c1);
+        issues.setForeground(c2);
+        issues.setFont(new Font("Tw Cen MT", 1, 20));
+        issues.setIcon(new ImageIcon(getClass().getResource("/resource/issueicn.png")));
+        issues.setText("ISSUE");
+        issues.setBorderPainted(false);
+        issues.setFocusPainted(false);
+        header.add(issues);
+        issues.setBounds(200,100,200,60);
+
+        returns = new JButton();
+        returns.setBackground(c1);
+        returns.setForeground(c2);
+        returns.setFont(new Font("Tw Cen MT", 1, 20));
+        returns.setIcon(new ImageIcon(getClass().getResource("/resource/returnicn.png")));
+        returns.setText("RETURN");
+        returns.setBorderPainted(false);
+        returns.setFocusPainted(false);
+        header.add(returns);
+        returns.setBounds(400, 100, 200, 60);
+
+        records = new JButton();
+        records.setBackground(c1);
+        records.setForeground(c2);
+        records.setFont(new Font("Tw Cen MT", 1, 20));
+        records.setIcon(new ImageIcon(getClass().getResource("/resource/recordicn.png")));
+        records.setText("RECORDS");
+        records.setBorderPainted(false);
+        records.setFocusPainted(false);
+        header.add(records);
+        records.setBounds(600, 100, 200, 60);
+
+        menu = new JButton();
+        menu.setBackground(c1);
+        menu.setForeground(c2);
+        menu.setFont(new Font("Tw Cen MT", 1, 20));
+        menu.setIcon(new ImageIcon(getClass().getResource("/resource/moreicn.png")));
+        menu.setText("MORE");
+        menu.setBorderPainted(false);
+        menu.setFocusPainted(false);
+        header.add(menu);
+        menu.setBounds(800, 100, 200, 60);
+
         pack();
     }
 
