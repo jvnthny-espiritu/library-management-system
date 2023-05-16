@@ -2,6 +2,6 @@ import gui.*;
 
 public class Main {
     public static void main(String[] args) {
-        new AdminPanel().setVisible(true);
+        new Login().setVisible(true);
     }
 }
