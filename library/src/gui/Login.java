@@ -3,6 +3,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Login extends JFrame {
     public Login() {
@@ -87,6 +89,19 @@ public class Login extends JFrame {
         loginbtn.setFocusPainted(false);
         right.add(loginbtn);
         loginbtn.setBounds(110, 320, 80, 18);
+        loginbtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String username = userfld.getText();
+                String password = new String(passfld.getPassword());
+
+                if (username.equals("admin") && password.equals("password")) {
+                    JOptionPane.showMessageDialog(null, "Login successful!");
+                    new AdminPanel().setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid username or password. Please try again.");
+                }
+            }
+        });
 
         pack();
     }
