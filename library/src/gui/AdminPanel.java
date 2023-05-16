@@ -63,6 +63,8 @@ public class AdminPanel extends JFrame {
         books.setBounds(0,100,200,60);
         books.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                books.setBackground(c2);
+                books.setForeground(c1);
                 Book book = new Book();
                 body.removeAll();
                 body.add(book);
