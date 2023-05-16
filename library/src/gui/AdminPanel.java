@@ -22,8 +22,12 @@ public class AdminPanel extends JFrame {
         header.setBounds(0, 0, 400, 500);
 
         logo = new JLabel();
-        logo.setIcon(new ImageIcon(getClass.getResource("/resource/logo.png")));
-        logo.setText("");
+        logo.setIcon(new ImageIcon(getClass().getResource("/resource/logo.png")));
+        logo.setText("Bookshelf");
+        logo.setFont(new Font("Bookman Old Style", 1, 30));
+        logo.setForeground(c2);
+        logo.add
+        logo.setBounds(10, 10, 300, 80);
         
     }
 
