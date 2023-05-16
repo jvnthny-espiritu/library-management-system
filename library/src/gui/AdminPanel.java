@@ -3,6 +3,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import gui.*;
 
 public class AdminPanel extends JFrame {
     public AdminPanel() {
@@ -19,7 +21,7 @@ public class AdminPanel extends JFrame {
         header.setLayout(null);
         header.setBackground(c1);
         getContentPane().add(header);
-        header.setBounds(0, 0, 1000, 100);
+        header.setBounds(0, 0, 1000, 160);
 
         logo = new JLabel();
         logo.setIcon(new ImageIcon(getClass().getResource("/resource/logo.png")));
@@ -44,6 +46,31 @@ public class AdminPanel extends JFrame {
         avatar.setBounds(925, 25, 50, 50);
         user.setBounds(710, 40, 200, 20);
 
+        body = new JPanel();
+        body.setBackground(c2);
+        body.setBounds(0, 160, 1000, 540);
+        getContentPane().add(body);
+
+        books = new JButton();
+        books.setBackground(c1);
+        books.setForeground(c2);
+        books.setFont(new Font("Tw Cen MT", 1, 20));
+        books.setIcon(new ImageIcon(getClass().getResource("/resource/book.png")));
+        books.setText("Book");
+        books.setBorderPainted(false);
+        books.setFocusPainted(false);
+        header.add(books);
+        books.setBounds(0,100,200,60);
+        books.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Book book = new Book();
+                body.removeAll();
+                body.add(book);
+                body.revalidate();
+                body.repaint();
+            }
+        });
+
         pack();
     }
 
@@ -52,7 +79,7 @@ public class AdminPanel extends JFrame {
     private JLabel brand;
     private JLabel avatar;
     private JLabel user;
-    private JLabel body;
+    private JPanel body;
     private JButton books;
     private JButton issues;
     private JButton returns;
