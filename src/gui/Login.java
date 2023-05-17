@@ -3,8 +3,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.sql.*;
 
 public class Login extends JFrame {
     public Login() {
@@ -93,17 +93,39 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String username = userfld.getText();
                 String password = new String(passfld.getPassword());
-
-                if (username.equals("admin") && password.equals("password")) {
-                    JOptionPane.showMessageDialog(null, "Login successful!");
+                
+                if (isValidLogin(username, password)) {
+                    // Login successful
+                    Login.this.dispose();
+                    JOptionPane.showMessageDialog(Login.this, "Login successful!");
                     new AdminPanel().setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Invalid username or password. Please try again.");
+                    // Login failed
+                    JOptionPane.showMessageDialog(Login.this, "Invalid username or password. Please try again.");
                 }
             }
         });
 
         pack();
+    }
+
+    private boolean isValidLogin(String username, String password) {
+        String url = "jdbc:mysql://localhost:3306/library";
+        String user = "root";
+        String dbPassword = "root";
+        
+        try (Connection conn = DriverManager.getConnection(url, user, dbPassword)) {
+            String query = "SELECT * FROM librarian WHERE username = ? AND password = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet resultSet = statement.executeQuery();
+            
+            return resultSet.next(); // If a matching row is found, the login is valid
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; // Login failed due to an exception
+        }
     }
 
     private JPanel left;
