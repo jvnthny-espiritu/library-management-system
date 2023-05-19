@@ -30,7 +30,7 @@ public class Book extends JPanel {
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String searchTitle = searchfld.getText();
-                data.Book bookData = search(searchTitle);
+                model.data.Book bookData = search(searchTitle);
 
                 if (bookData != null) {
                     setBookDataFields(bookData);
@@ -165,7 +165,7 @@ public class Book extends JPanel {
         add(cancel);
     }
 
-    private void setBookDataFields(data.Book bookData) {
+    private void setBookDataFields(model.data.Book bookData) {
         txtfld1.setText(bookData.getISBN());
         txtfld2.setText(bookData.getTitle());
         txtfld3.setText(bookData.getAuthor());
@@ -233,7 +233,7 @@ public class Book extends JPanel {
         }
     }
 
-    private data.Book search(String title) {
+    private model.data.Book search(String title) {
         try (Connection conn = DatabaseConnector.getConnection()) {
             String query = "SELECT * FROM book WHERE book_title = ?";
             PreparedStatement statement = conn.prepareStatement(query);
@@ -248,7 +248,7 @@ public class Book extends JPanel {
                 String year = resultSet.getString("publication_year");
                 String genre = resultSet.getString("genre");
 
-                return new data.Book(bookTitle, isbn, author, year, genre);
+                return new model.data.Book(bookTitle, isbn, author, year, genre);
             } else {
                 return null;
             }

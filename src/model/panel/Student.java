@@ -24,7 +24,7 @@ public class Student extends JPanel {
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int searchID = Integer.parseInt(txtfld1.getText());
-                data.Student studentData = search(searchID);
+                model.data.Student studentData = search(searchID);
 
                 if (studentData != null) {
                     txtfld2.setText(studentData.getName());
@@ -198,7 +198,7 @@ public class Student extends JPanel {
         }
     }
 
-    private data.Student search(int id) {
+    private model.data.Student search(int id) {
         try (Connection conn = DatabaseConnector.getConnection()) {
             String query = "SELECT * FROM student WHERE id = ?";
             PreparedStatement statement = conn.prepareStatement(query);
@@ -210,7 +210,7 @@ public class Student extends JPanel {
                 String year = resultSet.getString("year_level");
                 String program = resultSet.getString("program");
 
-                return new data.Student(id, name, year, program);
+                return new model.data.Student(id, name, year, program);
             } else {
                 return null;
             }
