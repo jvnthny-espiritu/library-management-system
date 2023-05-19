@@ -1,7 +1,11 @@
-import gui.*;
+import javax.swing.SwingUtilities;
+
+import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        new Login().setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            new Login().setVisible(true);
+        });
     }
 }
