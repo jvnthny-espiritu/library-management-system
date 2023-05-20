@@ -1,6 +1,6 @@
 import javax.swing.SwingUtilities;
 
-import model.*;
+import model.Login;
 
 public class Main {
     public static void main(String[] args) {

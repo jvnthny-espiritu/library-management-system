@@ -72,6 +72,7 @@ public class Book extends JPanel {
 
                 if (add(isbn, title, author, date, genre)) {
                     JOptionPane.showMessageDialog(Book.this, "Book added successfully.");
+                    clearFields();
                 } else {
                     JOptionPane.showMessageDialog(Book.this, "Failed to add book.");
                 }
@@ -90,6 +91,7 @@ public class Book extends JPanel {
 
                 if (update(isbn, title, author, date, genre)) {
                     JOptionPane.showMessageDialog(Book.this, "Book updated successfully.");
+                    clearFields();
                 } else {
                     JOptionPane.showMessageDialog(Book.this, "Failed to update book.");
                 }
@@ -104,6 +106,7 @@ public class Book extends JPanel {
 
                 if (delete(isbn)) {
                     JOptionPane.showMessageDialog(Book.this, "Book deleted successfully.");
+                    clearFields();
                 } else {
                     JOptionPane.showMessageDialog(Book.this, "Failed to delete book.");
                 }
